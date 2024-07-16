@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:ElectriciteApp.Models"
+             x:Class="ElectriciteApp.Views.ListeDesLocatairesItemPage"
+             x:DataType="models:Locataire"
+             Title="{Binding Nom}">
+    <ScrollView>
+
+        <VerticalStackLayout Padding="20" Spacing="10" VerticalOptions="StartAndExpand">
+            <Label Text="Date"/>
+            <DatePicker Date="{Binding Date}"/>
+
+            <Label Text="Numero de chambre"/>
+            <Entry Text="{Binding NumChambre}" Keyboard="Numeric"/>
+
+            <Label Text="Nom"/>
+            <Entry Text="{Binding Nom}"/>
+
+            <Label Text="Ancien Kilowatts"/>
+            <Entry Text="{Binding AncienKilowatts}" Keyboard="Numeric"/>
+
+            <Label Text="Nouveau Kilowatts"/>
+            <Entry Text="{Binding NouveauKilowatts}" Keyboard="Numeric"/>
+
+            <Label Text="Prix Unitaire"/>
+            <Entry Text="{Binding PrixUnitaire}" Keyboard="Numeric"/>
+
+            <Label Text="Taux Forfaitaire"/>
+            <Entry Text="{Binding TauxForfaitaire}" Keyboard="Numeric"/>
+
+            <Label Text="Prix du poubelle"/>
+            <Entry Text="{Binding PrixPoubelle}" Keyboard="Numeric"/>
+
+            <Label Text="Don"/>
+            <Entry Text="{Binding Don}" Keyboard="Numeric"/>
+
+            <Label Text="Balais"/>
+            <Entry Text="{Binding PrixBalais}" Keyboard="Numeric"/>
+
+            <Label Text="Montant Payé"/>
+            <Entry Text="{Binding MontantPaye}" Keyboard="Numeric"/>
+
+            <Button Text="Enregistrer" Clicked="OnSave"/>
+            <Button Text="Annuler" Clicked="OnCancel"/>
+            <Button Text="Supprimer" BackgroundColor="Red" IsVisible="{Binding Id}" Clicked="OnDelete"/>
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
